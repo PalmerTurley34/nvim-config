@@ -19,18 +19,6 @@ return {
 	},
 
 	{
-		"NvChad/nvterm",
-		config = function()
-			require("nvterm").setup()
-			local toggle_term = function()
-				require("nvterm.terminal").toggle("float")
-			end
-			vim.keymap.set("n", "<leader>tt", toggle_term, { desc = "[T]oggle [T]erminal" })
-			vim.keymap.set({ "t", "n" }, "<C-`>", toggle_term)
-		end,
-	},
-
-	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",
 		opts = {},
@@ -76,7 +64,7 @@ return {
 		"stevearc/dressing.nvim",
 		opts = {},
 	},
-	-- lazy.nvim
+
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -119,13 +107,6 @@ return {
 			require("mini.indentscope").setup({})
 		end,
 	},
-	-- {
-	-- 	"echasnovski/mini.animate",
-	-- 	version = false,
-	-- 	config = function()
-	-- 		require("mini.animate").setup({})
-	-- 	end,
-	-- },
 
 	{
 		"goolord/alpha-nvim",
