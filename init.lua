@@ -16,3 +16,5 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
 require("keymaps")
+
+vim.cmd("hi LineNr guifg=#9399b2")

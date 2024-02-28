@@ -9,6 +9,18 @@ vim.opt.mouse = "a"
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.api.nvim_create_autocmd("InsertEnter", {
+	callback = function()
+		vim.opt.relativenumber = false
+	end,
+})
+
+vim.api.nvim_create_autocmd("InsertLeave", {
+	callback = function()
+		vim.opt.relativenumber = true
+	end,
+})
+
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
