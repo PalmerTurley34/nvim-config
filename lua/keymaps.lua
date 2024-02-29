@@ -22,8 +22,8 @@ vim.keymap.set({ "n", "v" }, "<leader>d", '"_d')
 
 vim.keymap.set("i", "<C-i>", "<Esc>")
 
-vim.keymap.set("n", "<leader>w", ":write<CR>", { desc = "Write/Save File" })
-vim.keymap.set("n", "<leader>q", ":q<CR>", { desc = "Quit/Close File" })
+vim.keymap.set("n", "<leader>w", "<cmd>write<CR>", { desc = "Write/Save File" })
+vim.keymap.set("n", "<leader>q", "<cmd>quit<CR>", { desc = "Quit/Close File" })
 
 local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {

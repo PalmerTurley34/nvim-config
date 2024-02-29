@@ -24,7 +24,8 @@ vim.api.nvim_create_autocmd("InsertLeave", {
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
+vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.opt.incsearch = true
 
 vim.opt.scrolloff = 5
