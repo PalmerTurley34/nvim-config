@@ -36,19 +36,26 @@ return {
 		vim.fn.sign_define("DiagnosticSignHint", { text = "󰌵", texthl = "DiagnosticSignHint" })
 		require("neo-tree").setup({
 			close_if_last_window = true,
-			event_handlers = {
-
-				{
-					event = "file_opened",
-					handler = function(file_path)
-						-- auto close
-						-- vimc.cmd("Neotree close")
-						-- OR
-						require("neo-tree.command").execute({ action = "close" })
-					end,
-				},
-			},
+			-- event_handlers = {
+			--
+			-- 	{
+			-- 		event = "file_opened",
+			-- 		handler = function(file_path)
+			-- 			-- auto close
+			-- 			-- vimc.cmd("Neotree close")
+			-- 			-- OR
+			-- 			require("neo-tree.command").execute({ action = "close" })
+			-- 		end,
+			-- 	},
+			-- },
 		})
-		vim.keymap.set("n", "<leader>nt", ":Neotree filesystem reveal left<CR>", {})
+		vim.keymap.set(
+			"n",
+			"<leader>nt",
+			"<cmd>Neotree source=filesystem action=focus position=left reveal=true<CR>",
+			{ desc = "Neotree files" }
+		)
+		vim.keymap.set("n", "<leader>nb", "<cmd>Neotree buffers reveal float <CR>", { desc = "Neotree buffers" })
+		vim.keymap.set("n", "<leader>nc", "<cmd>Neotree close<CR>", { desc = "Neotree close" })
 	end,
 }
